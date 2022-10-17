@@ -2,16 +2,8 @@
   <CanvasTest></CanvasTest>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
 import CanvasTest from '@/components/CanvasTest.vue';
-
-export default defineComponent({
-  name: 'PracticePage',
-  components: {
-    CanvasTest,
-  },
-});
 </script>
 
 <style></style>
