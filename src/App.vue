@@ -31,4 +31,11 @@ nav {
     }
   }
 }
+
+.hr {
+  margin: 3rem 0;
+  border: solid;
+  border-width: 1px;
+  border-color: #000;
+}
 </style>

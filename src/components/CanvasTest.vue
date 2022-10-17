@@ -33,6 +33,7 @@ const mousePos = ref({
 const selectedBox = ref();
 const canvas = ref() as Ref<HTMLCanvasElement>;
 const startBtn = ref() as Ref<HTMLButtonElement>;
+const isStart = ref(false);
 const stopBtn = ref() as Ref<HTMLButtonElement>;
 const circleIndex = ref(0);
 
@@ -158,8 +159,15 @@ onMounted(() => {
     }
   });
 
-  startBtn.value.addEventListener('click', circleCreate);
-  stopBtn.value.addEventListener('click', () => clearInterval(intervalId));
+  startBtn.value.addEventListener('click', () => {
+    if (isStart.value) return;
+    isStart.value = true;
+    circleCreate();
+  });
+  stopBtn.value.addEventListener('click', () => {
+    isStart.value = false;
+    clearInterval(intervalId);
+  });
 });
 
 onUnmounted(() => {
